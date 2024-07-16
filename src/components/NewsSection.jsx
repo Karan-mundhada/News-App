@@ -4,7 +4,7 @@ const NewsSection = ({ npage, articles }) => {
   return (
     <div className="flex-1 h-screen p-2 border rounded overflow-y-scroll">
       <h2 className="text-4xl text-slate-800 font-bold mb-2 text-center">
-        {npage} <span className="text-cyan-400">no of articles</span> - {articles.length}
+        {npage} <span className="text-gray-800"> - no of articles</span> - {articles.length}
       </h2>
       <div className="space-y-2">
         {articles.length > 0 ? (

@@ -7,7 +7,8 @@ const SearchBar = ({ onSearch }) => {
     setQuery(e.target.value);
   };
 
-  const handleSearch = () => {
+  const handleSearch = (e) => {
+    e.preventDefault();
     onSearch(query);
     setQuery(""); // Clear the search bar after search
   };
@@ -18,7 +19,11 @@ const SearchBar = ({ onSearch }) => {
         Search Any News
         <span className="sm:block"> Get both Perspectives </span>
       </h1>
-      <div className="flex items-center max-w-md mx-auto p-2 m-2 rounded">
+
+      <form
+        onSubmit={handleSearch}
+        className="flex items-center max-w-md mx-auto p-2 m-2 rounded"
+      >
         <input
           type="text"
           placeholder="Search"
@@ -28,12 +33,11 @@ const SearchBar = ({ onSearch }) => {
         />
         <button
           className="p-2 m-2 bg-blue-500 text-white rounded"
-          type="button"
-          onClick={handleSearch}
+          type="submit"
         >
           Search
         </button>
-      </div>
+      </form>
     </div>
   );
 };
