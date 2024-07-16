@@ -19,7 +19,7 @@ function App() {
 
         // Fetch top headlines for user's country
         const response = await axios.get(
-          `https://newsapi.org/v2/top-headlines?country=${userCountry}&apiKey=${apiKey}`, {
+          `/v2/top-headlines?country=${userCountry}&apiKey=${apiKey}`, {
             headers: {
               'Content-Type': 'application/json'
             },
