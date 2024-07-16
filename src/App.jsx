@@ -19,7 +19,11 @@ function App() {
 
         // Fetch top headlines for user's country
         const response = await axios.get(
-          `https://newsapi.org/v2/top-headlines?country=${userCountry}&apiKey=${apiKey}`
+          `https://newsapi.org/v2/top-headlines?country=${userCountry}&apiKey=${apiKey}`, {
+            headers: {
+              'Content-Type': 'application/json'
+            },
+        }
         );
         setTopHeadlines(response.data.articles); // Assuming you want to display top headlines in articles1
       } catch (error) {
